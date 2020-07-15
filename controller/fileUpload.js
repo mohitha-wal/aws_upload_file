@@ -42,7 +42,7 @@ async function uploadS3(req, res, next) {
         else {
             imageFileArr = imageFile
         }
-        console.log(imageFileArr, 'AAAAAAAAAA')
+       // console.log(imageFileArr, 'AAAAAAAAAA')
 
         imageFileArr.map((item, key) => {
 
