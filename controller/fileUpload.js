@@ -46,12 +46,12 @@ async function uploadS3(req, res, next) {
 
         imageFileArr.map((item, key) => {
 
-            var params = {
-                Bucket: BUCKET_NAME,
-                Key: BUCKET_FOLDER + "/" + item.name,
-                Body: item.data,
-                ACL: "public-read",
-            };
+            // var params = {
+            //     Bucket: BUCKET_NAME,
+            //     Key: BUCKET_FOLDER + "/" + item.name,
+            //     Body: item.data,
+            //     ACL: "public-read",
+            // };
             s3.upload(params, async function (err, data) {
                 if (err) {
                     console.log("Error creating the folder: ", err);
