@@ -72,7 +72,7 @@ async function uploadS3(req, res, next) {
                         res.status(200).json({
                             success: true,
                             data: dataArray,
-                            message: "SUCCESSFULLY UPLOADED THE FILE",
+                            message: "SUCCESSFULLY UPLOADED THE FILE THAT HAS",
                         });
                     }
 
