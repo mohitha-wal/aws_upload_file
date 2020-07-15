@@ -33,7 +33,7 @@ async function uploadS3(req, res, next) {
         let imageFile = req.files;
         console.log(req.body)
         const dataArray = []
-        let i = 0
+        let i = 0,k=0
         let imageFileArr = []
        // console.log(Object.keys(imageFile).length, "SSSSSSSSSS")
         if (!Array.isArray(imageFile)) {
@@ -67,6 +67,7 @@ async function uploadS3(req, res, next) {
                         email: user.email
                     })
                     i = i + 1
+                    k=k+1
                     if (i === imageFileArr.length) {
                         res.status(200).json({
                             success: true,
