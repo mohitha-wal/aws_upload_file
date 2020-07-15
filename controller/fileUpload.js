@@ -35,7 +35,7 @@ async function uploadS3(req, res, next) {
         const dataArray = []
         let i = 0
         let imageFileArr = []
-        console.log(Object.keys(imageFile).length, "SSSSSSSSSS")
+       // console.log(Object.keys(imageFile).length, "SSSSSSSSSS")
         if (!Array.isArray(imageFile)) {
             imageFileArr.push(imageFile)
         }
