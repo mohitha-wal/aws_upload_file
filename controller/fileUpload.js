@@ -33,7 +33,7 @@ async function uploadS3(req, res, next) {
         let imageFile = req.files;
         console.log(req.body)
         const dataArray = []
-        let i = 0
+        let i = 0,j=0
         let imageFileArr = []
        // console.log(Object.keys(imageFile).length, "SSSSSSSSSS")
         if (!Array.isArray(imageFile)) {
@@ -46,12 +46,12 @@ async function uploadS3(req, res, next) {
 
         imageFileArr.map((item, key) => {
 
-            // var params = {
-            //     Bucket: BUCKET_NAME,
-            //     Key: BUCKET_FOLDER + "/" + item.name,
-            //     Body: item.data,
-            //     ACL: "public-read",
-            // };
+            var params = {
+                Bucket: BUCKET_NAME,
+                Key: BUCKET_FOLDER + "/" + item.name,
+                Body: item.data,
+                ACL: "public-read",
+            };
             s3.upload(params, async function (err, data) {
                 if (err) {
                     console.log("Error creating the folder: ", err);
@@ -66,6 +66,7 @@ async function uploadS3(req, res, next) {
                         fDate: moment(today).format('L'),
                         email: user.email
                     })
+                    j=j+1
                     i = i + 1
                     if (i === imageFileArr.length) {
                         res.status(200).json({
