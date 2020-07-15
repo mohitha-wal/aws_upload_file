@@ -82,10 +82,10 @@ async function uploadS3(req, res, next) {
         logger.info('FILE UPLOADED to S3')
     }
 
-    catch (error) {
-        res.status(400).json({
-            error:error
-        });
+    // catch (error) {
+    //     res.status(400).json({
+    //         error:error
+    //     });
        
     }
   }
